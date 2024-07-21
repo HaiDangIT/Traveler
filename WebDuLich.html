@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CzyCloudy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .search-bar {
+            margin: 2em 0;
+            text-align: center;
+        }
+        .search-bar input[type="text"] {
+            width: 50%;
+            padding: 0.5em;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-bar input[type="submit"] {
+            padding: 0.5em 2em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-bar input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .categories {
+            display: flex;
+            justify-content: space-around;
+            margin: 2em 0;
+        }
+        .category {
+            background-color: white;
+            padding: 1em;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 30%;
+            transition: transform 0.3s;
+        }
+        .category:hover {
+            transform: scale(1.05);
+        }
+        .category img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .category h3 {
+            margin-top: 0.5em;
+        }
+        .search-results {
+            display: none;
+            text-align: center;
+        }
+        .vr-section {
+            margin: 2em 0;
+            text-align: center;
+        }
+        .vr-button {
+            padding: 0.5em 2em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .vr-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>CzyCloudy</h1>
+        <p>Thông tin du lịch tóm gọn và đáng tin cậy</p>
+    </header>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Tìm kiếm địa điểm, hoạt động...">
+            <input type="submit" value="Tìm kiếm" onclick="search()">
+        </div>
+        <div class="categories">
+            <div class="category">
+                <img src="https://lawnet.vn/uploads/image/2023/07/25/112818763.jpg" alt="Địa điểm">
+                <h3>Địa điểm</h3>
+                <p>Khám phá các địa điểm du lịch hấp dẫn.</p>
+            </div>
+            <div class="category">
+                <img src="https://www.vietnambooking.com/wp-content/uploads/2023/04/tuyen-diem-du-lich-viet-nam-4.jpg" alt="Hoạt động">
+                <h3>Hoạt động</h3>
+                <p>Gợi ý các hoạt động thú vị tại điểm đến.</p>
+            </div>
+            <div class="category">
+                <img src="https://dulichsaigon.edu.vn/wp-content/uploads/2024/01/hoi-an-thanh-pho-du-lich-o-viet-nam-thu-hut-nhieu-du-khach.jpg" alt="Chi phí">
+                <h3>Chi phí</h3>
+                <p>Thông tin chi phí ước tính cho chuyến đi.</p>
+            </div>
+        </div>
+        <div class="search-results" id="search-results">
+            <h2>Kết quả tìm kiếm</h2>
+            <p id="results"></p>
+        </div>
+        <div class="vr-section">
+            <h2>Trải nghiệm VR</h2>
+            <p>Khám phá cảnh thiên nhiên tuyệt đẹp bằng thực tế ảo!</p>
+            <button class="vr-button" onclick="startVR()">Xem VR</button>
+        </div>
+        <a-scene embedded>
+            <!-- Nền hình ảnh -->
+            <a-sky src="https://lawnet.vn/uploads/image/2023/07/25/112818763.jpg" rotation="0 0 0"></a-sky>
+            
+            <!-- Mặt đất -->
+            <a-plane position="0 0 -10" rotation="-90 0 0" width="50" height="50" color="#C0C0C0"></a-plane>
+            
+            <!-- Đối tượng trong cảnh -->
+            <a-box position="-5 1 -7" rotation="0 45 0" color="#8B4513" depth="3" width="3" height="2"></a-box> <!-- Đá -->
+            <a-sphere position="5 2 -15" radius="2" color="#FFD700"></a-sphere> <!-- Mặt trời -->
+            <a-cylinder position="0 0.5 -5" radius="1" height="5" color="#228B22"></a-cylinder> <!-- Cây -->
+
+            <!-- Ánh sáng -->
+            <a-light type="ambient" color="#ffffff"></a-light>
+            <a-light type="directional" position="10 10 10" color="#FFFAF0"></a-light>
+
+            <!-- Camera -->
+            <a-camera position="0 1.6 0"></a-camera>
+        </a-scene>
+    </div>
+    <script>
+        function search() {
+            var input = document.getElementById('search-input').value;
+            var resultsDiv = document.getElementById('results');
+            var searchResults = document.getElementById('search-results');
+            
+            // Simple search result for demo purposes
+            if (input) {
+                resultsDiv.innerHTML = 'Bạn đã tìm kiếm: ' + input;
+                searchResults.style.display = 'block';
+            } else {
+                resultsDiv.innerHTML = '';
+                searchResults.style.display = 'none';
+            }
+        }
+
+        function startVR() {
+            var scene = document.querySelector('a-scene');
+            if (scene.hasAttribute('vr-mode-ui')) {
+                scene.enterVR();
+            } else {
+                alert('Trình duyệt của bạn không hỗ trợ VR!');
+            }
+        }
+    </script>
+</body>
+</html>
