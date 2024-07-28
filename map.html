@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CzyCloudy - Bản Đồ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        .map-container {
+            width: 100%;
+            height: 500px;
+        }
+        .navigation {
+            text-align: center;
+            margin-top: 2em;
+        }
+        .navigation a {
+            margin: 0 1em;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2em 0;
+            text-align: left;
+            width: 100%;
+            position: relative;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2em;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 220px;
+            margin-right: 20px;
+        }
+        .footer-column h3 {
+            color: #4CAF50;
+            margin-bottom: 1em;
+        }
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        .footer-column a:hover {
+            color: #4CAF50;
+        }
+        .social-links a {
+            margin-right: 15px;
+            color: white;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            color: #4CAF50;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2em;
+        }
+        .footer-bottom a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CzyCloudy - Bản Đồ</h1>
+    </header>
+    <div class="container">
+        <div class="map-container" id="map"></div>
+        <!-- Thêm liên kết đến các trang khác -->
+        <div class="navigation">
+            <a href="./index.html">Về Trang Chủ</a> | 
+            <a href="./itinerary.html">Xem Lịch Trình và Đặt Chỗ</a>
+        </div>
+    </div>
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 10.762622, lng: 106.660172 },
+                zoom: 13
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Chăm sóc khách hàng</h3>
+                <a href="#">Trung tâm trợ giúp</a>
+                <a href="#">Hướng dẫn khách hàng</a>
+                <a href="#">Chính sách bảo hành</a>
+            </div>
+            <div class="footer-column">
+                <h3>Về CzyCloudy</h3>
+                <a href="#">Giới thiệu về CzyCloudy Việt Nam</a>
+                <a href="#">Tuyển dụng</a>
+                <a href="#">Điều Khoản CzyCloudy</a>
+                <a href="#">Chính sách bảo mật</a>
+            </div>
+            <div class="footer-column">
+                <h3>Liên hệ</h3>
+                <a href="#">Liên hệ CzyCloudy</a>
+                <a href="#">Chương trình Tiếp thị liên kết</a>
+                <a href="#">Liên Hệ Với Truyền Thông</a>
+            </div>
+            <div class="footer-column">
+                <h3>Theo dõi chúng tôi trên</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                    <a href="https://www.instagram.com" target="_blank">Instagram</a>
+                    <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+                </div>
+                <h3>Thanh toán</h3>
+                <a href="#">Momo</a>
+                <a href="#">Ngân Hàng Nội Địa</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CzyCloudy. <a href="mailto:contact@czycloudy.com">Liên hệ</a></p>
+        </div>
+    </footer>
+</body>
+</html>

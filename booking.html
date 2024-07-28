@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt lịch trình - CzyCloudy</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .booking-form {
+            background-color: white;
+            padding: 2em;
+            margin: 2em 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .booking-form h2 {
+            text-align: center;
+        }
+        .booking-form label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        .booking-form input[type="text"], 
+        .booking-form input[type="datetime-local"], 
+        .booking-form input[type="submit"] {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        .booking-form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .booking-form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .navigation {
+            text-align: center;
+            margin-top: 2em;
+        }
+        .navigation a {
+            margin: 0 1em;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+        #chucnang1
+        {
+            color: black;
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Đặt lịch trình - CzyCloudy</h1>
+        <nav>
+            <a  id="chucnang1" href="index.html">Trang chủ</a> |
+            <a id="chucnang1" href="locations.html">Địa điểm</a> |
+            <a id="chucnang1" href="activities.html">Hoạt động</a> |
+            <a  id="chucnang1"href="booking.html">Đặt lịch trình</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="booking-form">
+            <h2>Nhập thông tin của bạn</h2>
+            <form action="/submit_booking" method="post">
+                <label for="name">Họ và tên</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="layover-time">Giờ quá cảnh (nếu có)</label>
+                <input type="datetime-local" id="layover-time" name="layover-time">
+
+                <label for="travel-time">Thời gian muốn đi</label>
+                <input type="datetime-local" id="travel-time" name="travel-time" required>
+
+                <label for="current-location">Địa điểm hiện tại</label>
+                <input type="text" id="current-location" name="current-location">
+
+                <label for="suggestions">Gợi ý đi đâu</label>
+                <input type="text" id="suggestions" name="suggestions">
+
+                <input type="submit" value="Đặt lịch trình">
+            </form>
+        </div>
+    </div>
+   
+</body>
+</html>

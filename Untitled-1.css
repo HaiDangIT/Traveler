@@ -1,0 +1,1193 @@
+/* Reset css */
+
+*{
+
+    /* Kieu emmet -> viet nhanh hon */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+html
+{
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.clear
+{
+    clear: both;
+}
+
+.text-white
+{
+    color: white !important;
+}
+
+/*
+1. Vi tri
+2.Kich thuoc (width, height)
+3.Mau sac
+4.Kieu dang ( tron, vuong,...)
+*/
+
+/*
+--Nguyen tac lam web--
+1. Tu ngoai vao trong
+2. Tu tren xuong duoi
+3. Tong quan den chi tiet
+*/
+
+/*-------*/
+
+
+/* Phan comon (dung chung cho ca web row and columm */
+
+.row2
+{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row2::after
+{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col
+{
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
+   
+}
+
+.col-2{
+float: left;
+padding-left: 8px;
+padding-right: 8px;
+}
+
+.col-half
+{
+    width: 50%;
+}
+
+.col-full
+{
+    width: 100%;
+}
+
+
+.contact-content
+{
+    margin-top: 48px;
+    padding-bottom: 50px;
+}
+
+.contact-info
+{
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 10px;
+    
+}
+
+.contact-info .fa-solid
+{
+    width: 30px;
+    display: inline-block;
+}
+
+.contact-form
+{
+    font-size: 20px;
+    text-align: justify;
+}
+
+.contact-form .form-control
+{
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    
+
+    
+}
+
+.contact-form .place-btn
+{
+    background-color: rgb(253, 95, 95);
+    color: white;
+    border: 1px solid;
+    padding: 10px 16px;
+    float: right;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.place-btn:hover
+{
+    opacity: 0.8;
+}
+
+
+
+.m-t-8
+{
+    margin-top: 8px !important;
+}
+
+.m-t-16
+{
+    margin-top: 16px !important;
+}
+
+
+
+/* Phan comon (dung chung cho ca web row and columm */
+
+
+/*-------*/
+
+
+/*Phan ho tro thay doi*/
+
+:root
+{
+    --height: 46px;
+}
+
+
+
+/*Main*/
+
+/*Phan class cua ca web*/
+
+
+/*Duoi la css cua phan header*/
+
+#header
+{
+    height: var(--height);
+    background-color: #3ca3a6;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 12px rgba(0,0,0,0.4);
+    z-index: 2;
+    
+}
+
+/*Duoi la css cho rieng thang nav*/
+#nav
+{
+    display: inline-block;
+ 
+}
+
+
+/*Duoi la con cua header de tao phan navigation*/
+
+#nav , .subnav
+{
+    list-style-type: none ;
+}
+
+/*Duoi la css tu id goc nav sang cac the li dang duoc chua ben trong*/
+
+#nav li
+{
+    display: inline-block;
+    position: relative;
+}
+
+
+/*Duoi la dang css cho thang con bat buoc la con cua thang cha trc do(menu cap 1) da tach css*/
+
+#nav > li > a
+{
+    color: white;
+    text-transform: uppercase;
+}
+
+/*Duoi la css cho the li va the a co trong the li*/
+
+#nav li a
+{
+
+    text-decoration: none;
+    line-height: var(--height);
+    padding: 0 24px;
+    display: block;
+}
+
+/*Lam meni an hien di vao li hien the con ul*/
+
+#nav li:hover .subnav
+{
+    display: block;
+}
+
+
+
+/*Duoi day la lop gia cho nhung thang thuoc cha duoc chi dinh nho dau so sanh kia ( da tach ra thanh css cho cap 1) */
+
+/*Co the css cho 2 doi tuong lien tiep neu giong thuoc tinh nhu menu 1 va 2 bang ghi xong thang dau , thang hai*/
+
+#nav > li:hover > a
+{
+    color: black;
+    background-color: lightblue;
+}
+
+
+
+/*Duoi la lop gia cho the li co chua chu va the a ( nay la css cho chung toan bo )*/
+
+
+/*Duoi day la css cho the cha a de absolute vao*/
+/* #idmore
+{
+    position: relative;
+} */
+
+
+/*Duoi la css cho phan tu id cha sang id con phan more phu (menu cap 2)*/
+
+#nav .subnav
+{
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    min-width: 160px;
+
+    /*Phai tu do vi tri top left right bottom*/
+
+
+    
+
+}
+
+/*Duoi la css style cho nhung thang con cua subnav*/
+
+#nav .subnav a
+{
+    color:  black;
+    padding: 0 16px;
+    line-height: 38px;
+    
+
+}
+
+/*Duoi la css cho menu cap 2 sau khi da tach ra khoi tong css*/
+
+#nav .subnav li:hover a
+{
+    color: black;
+    background-color: lightblue;
+}
+
+/*Duoi la chinh the li cua thang cha subnav*/
+.subnav  li  
+{
+    width: 100%;
+
+}
+
+/*Duoi la chinh icon*/
+
+#nav .nav-muiten
+{
+    font-size: 15px;
+}
+
+#nav .nav-muiten1
+{
+    font-size: 15px;
+    position: relative;
+    top: -2px;
+}
+
+#header .mobile-menu-btn,
+#header .search-button
+{
+    float: right;
+    padding: 0 21px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#header .mobile-menu-btn
+{
+    display: none;
+   
+   
+}
+
+#header .mobile-menu-btn:hover
+{
+    background-color: white;
+}
+
+#header .mobile-menu-btn:hover .menu-icon
+{
+    color:  #3ca3a6;
+}
+#header .search-button:hover
+{
+    background-color: #f44336;
+    cursor: pointer;
+}
+
+
+#header .menu-icon,
+#header .search-icon
+{
+    color:  white;
+    font-size: 20px;
+    line-height: var(--height);
+
+}
+
+/* testt */
+
+body
+{
+  
+    background-color: rgb(255, 255, 255);
+}
+/* 
+img{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+} */
+
+/* testt */
+
+
+
+/*Day la phan slider */
+
+#slider
+{
+    position: relative;
+   margin-top: 46px;
+   padding-top: 50%;
+   background: url("./Slider/slider5.jpg") top center / cover no-repeat;    
+   background-size: 100% 100%;
+
+
+}
+
+#slider .text-content{
+
+    position: absolute;
+    bottom: 47px;
+    color: white;
+    /* left: 50%; */
+    width: 100%;
+    /* transform: translateX(-50%); */
+    text-align: center;
+
+
+
+}
+#slider .text-heading{
+    font-weight: 500;
+    font-size: 35px;
+
+}
+#slider .text-description{
+    font-size: 24px;
+    margin-top: 12px;
+    text-shadow: 0 0 1px black;
+
+}
+/* About section */
+
+#content .content-section
+{
+    /* Can giua thi voi chu sai text-align con khoi nhu the div sai margin left right */
+    /* Su dung margin auto khi co kich thuoc cu the , neu la 100% thi dat 2 cai bang nhau neu khong se uu tien left va lech trai */
+
+    width: 800px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    text-align: center;
+    padding: 64px 0;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    
+}
+
+/*Duoi la phan text rieng cua phan about */
+
+#content .about-text
+{
+    text-align: justify;
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1.5;
+   
+
+}
+
+#content .section-heading
+{
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 40px;
+    letter-spacing: 6px;
+
+}
+
+#content .section-sub-heading
+{
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 15px;
+    opacity: 0.6;
+    
+}
+
+#content .member-list
+{
+    margin-top: 48px;
+   overflow: hidden;
+
+
+}
+
+
+#content .member-item
+{
+    float: left;
+    width: 100%;
+    text-align: center;
+    
+    
+}
+ 
+#content .member-name
+{
+    margin-top: 60px;
+    font-size: 15px;
+    
+
+}
+
+#content .member-img
+{
+    margin-top: 15px;
+    width: 145px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    image-rendering: pixelated;
+  
+
+
+}
+
+/* About section */
+
+/* Chinh icon phan content */
+#content .content-icon
+{
+    font-size: 15px;
+}
+
+
+/* Tour section */
+
+.tour-section
+{
+    background-color: #295050;
+
+}
+
+.tickets-list 
+{
+    background-color: white;
+    margin-top: 40px;
+    list-style: none;
+
+}
+
+.tickets-list li
+{
+    font-size: 16px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #ddd;
+    text-align:left;
+    color: #757575;
+
+}
+
+.tickets-list .No-event
+{
+   background-color: rgb(255, 68, 68);
+   color: white;
+   padding: 3px 4px;
+   margin-left: 16px;
+   float: right;
+   border-radius: 3px;
+
+}
+
+.tickets-list .quantity
+{
+    float: right;
+    width: 24px;
+    height: 24px;
+    background-color: #2f4f4f;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    margin-top: -3px;
+
+}
+
+/* Place section */
+
+.places-list
+{
+    margin-top: 60px;
+   padding-bottom: 32px;
+   width: 100%;
+ 
+}
+.places-item
+{
+    width: 32%;
+}
+.place-img
+{
+
+  width: 100%;
+  display: block;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+    
+}
+
+.places-item > .place-img:hover
+{
+    opacity: 0.6;
+}
+
+
+
+.place-body
+{
+    background-color: white;
+    width: 100%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 16px;
+    font-size: 15px;
+    text-align: left;
+    
+}
+.place-heading
+{
+    font-size: 15px;
+    font-weight: 600;
+
+}
+.place-time
+{
+    margin-top: 15px;
+    color: #757575;
+}
+.place-desc
+{
+    margin-top: 15px;
+    line-height: 1.4;
+    
+}
+.-btn
+{
+    background-color: rgb(253, 95, 95);
+    color: white;
+    text-decoration: none;
+    padding: 11px 16px;
+    display: inline-block;
+    margin-top: 18px;
+    border-radius: 5px;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.-btn:hover
+{
+    opacity: 0.8;
+    /* background-color: ;
+    color: ; */
+
+
+}
+
+
+
+
+
+/* Place section */
+
+
+
+
+
+/* Tour section */
+
+/* Footer section */
+
+
+
+
+/* Map section */
+
+.map-section img
+{
+    width: 100%;
+}
+
+.footer
+{
+    padding: 64px 16px;
+    text-align: center;
+
+}
+
+.icon-footer
+{
+    font-size: 24px;
+    color: rgba(0,0,0,0.5);
+    text-decoration: none;
+    letter-spacing: 4px;
+    
+}
+
+.icon-footer:hover
+{
+    opacity: 0.4;
+}
+
+.footer .copyright
+{
+    font-size: 15px;
+    padding: 15px;
+    color: rgba(0,0,0,0.5);
+}
+
+.footer .copyright a
+{
+    color: rgba(0,0,0,0.5);
+}
+
+.contact-icon
+{
+    
+    color:#009688;
+}
+
+.contact-icon:hover
+{
+    opacity: 0.4;
+}
+
+/* Map section */
+
+
+/* Mucsic section */
+
+.musical
+{
+    background: #5F7C7C;
+    border: 1px solid rgba(254, 246, 228, 0.6);
+    height: 100%;
+ 
+}
+
+.music-option
+{
+    width: 100% !important;
+}
+
+
+.nen2-music
+{
+
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 45%;
+    height: 100%;
+    background-color: #FFFCEE;
+    border-radius: 45px;  
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    display: inline-block;
+    float: right;
+    
+    
+
+}
+
+.music-content-css
+    {
+        margin-bottom: 20px;
+        
+    }
+
+
+.music-content-css > h1
+{
+    font-style: italic;
+    opacity: 0.7;
+    margin-top: 30px !important;  
+    font-size: 25px;  
+   
+}
+
+.music-content-css > .limusic123
+{
+    width: 80%;
+    font-style: italic;
+    opacity: 0.6;
+    text-align:left;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 1.2;   
+    margin-bottom: 10px;
+     
+}
+
+.heading-music
+{
+    color: white;
+}
+
+.content-music
+{
+    color: white;
+}
+
+
+.box-music
+{
+    
+    float: left;
+    width: 45%;
+    height: 100%;
+    background-color: #768c75;
+    display: inline-block;
+    border-radius: 45px; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.4);
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+}
+
+
+
+.song-name, .artist
+{
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+  
+    
+}
+
+.song-name
+{
+    font-size: 25px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+.artist
+{
+
+    font-size: 16px;
+    font-weight: 400px;
+   
+
+}
+
+.box-dis
+{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 0 5px white;
+    background: url(./NenDiaNhac/nuna.jpg) no-repeat top left;
+    background-size: cover;
+    animation: rotate 20s linear infinite;
+    animation-play-state: paused;
+    
+    
+
+    
+}
+
+.box-dis.play{
+    animation-play-state: running;
+}
+
+
+.box-dis:before
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+
+
+.music-slider
+{
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.seek-bar
+{
+    width: 80%;
+    height: 5px;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    overflow: hidden;
+    display: block;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    appearance: none;
+    justify-content: center;
+    
+   
+    
+}
+
+.seek-bar::-webkit-slider-thumb
+{
+    
+    width: 10px;
+    height: 10px;
+    background-color:rgb(84, 85, 84);
+    appearance: none;
+    box-shadow: -400px 0 0 400px rgb(84, 85, 84);
+
+    
+}
+
+
+.current-time
+{
+    float: left;
+    margin-left: 70px;
+    font-size: 15px;
+    margin-top: -15px;
+    position: relative;
+
+}
+.music-time
+{
+    float: right;
+    margin-left: 5px;
+    font-size: 15px;
+    right: 0;
+    margin-top: -15px;
+    margin-right: 70px;
+
+}
+
+
+.control-btn
+{
+
+    width: 60%;
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-evenly;
+    margin: auto;
+    margin-bottom: 50px;
+    
+}
+
+
+.btn-playmusic
+{
+    position: relative;
+    border-radius: 50%;
+    background-color: rgb(238, 238, 223);
+    border: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    
+}
+
+.btn-playmusic span
+{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 30px;
+    border-radius: 2px;
+    background-color: rgb(89, 118, 96);
+    transition: .5s;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.btn-playmusic span:nth-child(2)
+{
+    left: 55%;
+    transform-origin: center;
+}
+
+.btn-playmusic.pause span:nth-child(2)
+{
+    transform: translateY(-50%) scaleY(0);
+}
+
+.btn-playmusic.pause span:nth-child(1)
+{
+    width: 35%;
+    left: 53%;
+    transform: translate(-50%,-50%);
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%);
+}
+
+.btn-playmusic.pause
+{
+    animation: pulse 5s linear infinite;
+
+}
+
+@keyframes pulse{
+    0%{
+        box-shadow: 0;
+    }
+    50%{
+        box-shadow: 0 0 0 5px rgba(224, 224, 224, 0.8);
+    }
+    100%{
+        box-shadow: 0 0 0 5px  rgba(224, 224, 224, 0.3);
+    }
+}
+
+.btn--1
+{
+    width: 40px;
+    height: 40px;
+    background-color: beige;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Music section */ 
+
+.modal
+{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.4);
+
+    /* Chinh can ra giua thang cha */
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    /* Chinh can ra giua thang cha */
+
+
+}
+
+.modal.open
+{
+    display: flex;
+}
+
+.modal-container
+{
+    background-color: white;
+    width: 900px;
+    min-height: 200px;
+    max-width: calc(100% - 32px);
+    position: relative;
+    animation: modalFaceIn ease .5s;
+
+}
+
+.modal-header
+{
+    background-color: #009688;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+    letter-spacing: 5px;
+
+}
+
+.bag
+{
+    margin-right: 16px;
+}
+
+.js-modal-close
+{
+    position: absolute;
+    right: 0;
+    color: white;
+    font-size: 25px;
+    font-weight: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+    
+
+    cursor: pointer;
+    
+}
+
+.js-modal-close:hover
+{
+    background-color: red;
+}
+
+
+/* .js-modal-close > .close:hover
+{
+    opacity: 0.8;
+    color: rgb(255, 50, 50);
+} */
+
+.modal-body
+{
+    padding: 16px;
+}
+
+.modal-label
+{
+    display: block;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.modal-input
+{
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 24px;
+}
+
+#buy-item 
+{
+    color: white;
+    background-color: #009688;
+    text-decoration: none;
+    width: 100%;
+    height: 45px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 1px solid ;;
+    border-radius: 4px;
+
+
+}
+
+#buy-item:hover
+{
+    opacity: 0.7;
+}
+
+#buy-item > .the-a
+{
+    text-decoration: none;
+    color: white;
+    letter-spacing: 3px;
+    font-size: 15px;
+    
+}
+
+.modal-footer
+{
+    padding: 16px;
+    text-align: right;
+    font-size: 15px;
+    
+}
+
+@keyframes modalFaceIn {
+    from {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CzyCloudy</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <style>
+        /* Các phần tử CSS khác */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -88,13 +90,118 @@
         .vr-button:hover {
             background-color: #45a049;
         }
+        .swiper-container {
+            width: 100%;
+            height: 400px;
+            margin: 20px auto;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .navigation {
+            text-align: center;
+            margin-top: 2em;
+        }
+        .navigation a {
+            margin: 0 1em;
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2em 0;
+            text-align: left;
+            width: 100%;
+            position: relative;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2em;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 220px;
+            margin-right: 20px;
+        }
+        .footer-column h3 {
+            color: #4CAF50;
+            margin-bottom: 1em;
+        }
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        .footer-column a:hover {
+            color: #4CAF50;
+        }
+        .social-links a {
+            margin-right: 15px;
+            color: white;
+            text-decoration: none;
+        }
+        .social-links a:hover {
+            color: #4CAF50;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2em;
+        }
+        .footer-bottom a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+        a
+        {
+            text-decoration: none;
+            color: #333;
+        }
+        #chucnang
+        {
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+        }
+        #tieude{
+            color: white;
+            font-family:'Times New Roman', Times, serif;
+            font-size: 35px;
+        }
     </style>
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 </head>
 <body>
     <header>
-        <h1>CzyCloudy</h1>
-        <p>Thông tin du lịch tóm gọn và đáng tin cậy</p>
+        <h1 id="tieude">CzyCloudy</h1>
+        <p>Du lịch dễ dàng và nhanh chóng</p>
+        <nav>
+            <a id="chucnang" href="index.html">Trang chủ</a> |
+            <a id="chucnang" href="locations.html">Địa điểm</a> |
+            <a id="chucnang" href="activities.html">Hoạt động</a> |
+            <a id="chucnang" href="booking.html">Đặt lịch trình</a>
+        </nav>
     </header>
     <div class="container">
         <div class="search-bar">
@@ -103,74 +210,117 @@
         </div>
         <div class="categories">
             <div class="category">
-                <img src="https://lawnet.vn/uploads/image/2023/07/25/112818763.jpg" alt="Địa điểm">
-                <h3>Địa điểm</h3>
-                <p>Khám phá các địa điểm du lịch hấp dẫn.</p>
+                <a href="locations.html">
+                    <img src="./img/anh8.jpg" alt="Địa điểm">
+                    <h3>Địa điểm</h3>
+                    <p>Khám phá các địa điểm du lịch hấp dẫn.</p>
+                </a>
             </div>
             <div class="category">
-                <img src="https://www.vietnambooking.com/wp-content/uploads/2023/04/tuyen-diem-du-lich-viet-nam-4.jpg" alt="Hoạt động">
-                <h3>Hoạt động</h3>
-                <p>Gợi ý các hoạt động thú vị tại điểm đến.</p>
+                <a href="activities.html">
+                    <img src="./img/anh7.jpg" alt="Hoạt động">
+                    <h3>Hoạt động</h3>
+                    <p>Gợi ý các hoạt động thú vị tại điểm đến.</p>
+                </a>
             </div>
             <div class="category">
-                <img src="https://dulichsaigon.edu.vn/wp-content/uploads/2024/01/hoi-an-thanh-pho-du-lich-o-viet-nam-thu-hut-nhieu-du-khach.jpg" alt="Chi phí">
-                <h3>Chi phí</h3>
-                <p>Thông tin chi phí ước tính cho chuyến đi.</p>
+                <a href="booking.html">
+                    <img src="./img/anh6.jpg" alt="Đặt lịch trình">
+                    <h3>Đặt lịch trình</h3>
+                    <p>Nhập thông tin và đặt lịch trình cho chuyến đi của bạn.</p>
+                </a>
             </div>
         </div>
         <div class="search-results" id="search-results">
             <h2>Kết quả tìm kiếm</h2>
             <p id="results"></p>
         </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="./img/anh1.jpg" alt="Location 1"></div>
+                <div class="swiper-slide"><img src="./img/anh2.jpg" alt="Location 2"></div>
+                <div class="swiper-slide"><img src="./img/anh3.jpg" alt="Location 3"></div>
+                <div class="swiper-slide"><img src="./img/anh4.jpg" alt="Location 4"></div>
+                <div class="swiper-slide"><img src="./img/anh5.jpg" alt="Location 5"></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
         <div class="vr-section">
             <h2>Trải nghiệm VR</h2>
             <p>Khám phá cảnh thiên nhiên tuyệt đẹp bằng thực tế ảo!</p>
             <button class="vr-button" onclick="startVR()">Xem VR</button>
         </div>
-        <a-scene embedded>
-            <!-- Nền hình ảnh -->
-            <a-sky src="https://lawnet.vn/uploads/image/2023/07/25/112818763.jpg" rotation="0 0 0"></a-sky>
-            
-            <!-- Mặt đất -->
-            <a-plane position="0 0 -10" rotation="-90 0 0" width="50" height="50" color="#C0C0C0"></a-plane>
-            
-            <!-- Đối tượng trong cảnh -->
-            <a-box position="-5 1 -7" rotation="0 45 0" color="#8B4513" depth="3" width="3" height="2"></a-box> <!-- Đá -->
-            <a-sphere position="5 2 -15" radius="2" color="#FFD700"></a-sphere> <!-- Mặt trời -->
-            <a-cylinder position="0 0.5 -5" radius="1" height="5" color="#228B22"></a-cylinder> <!-- Cây -->
-
-            <!-- Ánh sáng -->
-            <a-light type="ambient" color="#ffffff"></a-light>
-            <a-light type="directional" position="10 10 10" color="#FFFAF0"></a-light>
-
-            <!-- Camera -->
-            <a-camera position="0 1.6 0"></a-camera>
-        </a-scene>
     </div>
+    <div class="navigation">
+        <a href="itinerary.html">Xem Lịch Trình và Đặt Chỗ</a> | 
+        <a href="map.html">Xem Bản Đồ</a>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Chăm sóc khách hàng</h3>
+                <a href="#">Trung tâm trợ giúp</a>
+                <a href="#">Hướng dẫn khách hàng</a>
+                <a href="#">Chính sách bảo hành</a>
+            </div>
+            <div class="footer-column">
+                <h3>Về CzyCloudy</h3>
+                <a href="#">Giới thiệu về CzyCloudy Việt Nam</a>
+                <a href="#">Tuyển dụng</a>
+                <a href="#">Điều Khoản CzyCloudy</a>
+                <a href="#">Chính sách bảo mật</a>
+            </div>
+            <div class="footer-column">
+                <h3>Liên hệ</h3>
+                <a href="#">Liên hệ CzyCloudy</a>
+                <a href="#">Chương trình Tiếp thị liên kết</a>
+                <a href="#">Liên Hệ Với Truyền Thông</a>
+            </div>
+            <div class="footer-column social-links">
+                <h3>Theo dõi chúng tôi</h3>
+                <a href="#" target="_blank">Facebook</a>
+                <a href="#" target="_blank">Twitter</a>
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CzyCloudy. Tất cả các quyền được bảo lưu.</p>
+            <a href="#">Quay lại đầu trang</a>
+        </div>
+    </footer>
+
+    <!-- Thêm script cho Swiper -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
         function search() {
-            var input = document.getElementById('search-input').value;
-            var resultsDiv = document.getElementById('results');
-            var searchResults = document.getElementById('search-results');
-            
-            // Simple search result for demo purposes
-            if (input) {
-                resultsDiv.innerHTML = 'Bạn đã tìm kiếm: ' + input;
-                searchResults.style.display = 'block';
-            } else {
-                resultsDiv.innerHTML = '';
-                searchResults.style.display = 'none';
-            }
+            const input = document.getElementById('search-input').value;
+            document.getElementById('results').innerText = `Kết quả tìm kiếm cho: ${input}`;
+            document.getElementById('search-results').style.display = 'block';
         }
 
         function startVR() {
-            var scene = document.querySelector('a-scene');
-            if (scene.hasAttribute('vr-mode-ui')) {
-                scene.enterVR();
-            } else {
-                alert('Trình duyệt của bạn không hỗ trợ VR!');
-            }
+            alert("Khởi động trải nghiệm VR...");
+            // Thêm mã khởi động trải nghiệm VR ở đây
         }
     </script>
 </body>
 </html>
+
